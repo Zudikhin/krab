@@ -33,6 +33,18 @@ $(document).ready(function() {
       	nextArrow: $('.about_block_item_img_arrows_next')
 	});
 
+    $(".product_wrap_title").click(function() {
+        $(this).parent().toggleClass("active");
+        $(this).parent().find(".product_wrap_body").slideToggle();
+    });
+
+    $(".product_main_text_img_item").click(function() {
+        $(".product_main_text_img_item").removeClass("active");
+        $(this).addClass("active");
+        var src = $(this).children().attr('src');
+        $(".product_main_img img").attr('src', src);
+    });
+
     $(".dropdown_menu_parent ul li span").click(function() {
         $(".dropdown_menu_parent ul li span").removeClass("active");
         $(this).addClass("active");
