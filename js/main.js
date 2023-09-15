@@ -97,7 +97,11 @@ $(document).ready(function() {
             $(`#${attr}`).removeClass("hidden");
             $(".products_top h1").text(title);
         }
-        
+    });
+
+    $(".contacts_block_wrap_body_dealers_item_top").click(function() {
+        $(this).toggleClass("active");
+        $(this).parent().find(".contacts_block_wrap_body_dealers_item_body").slideToggle();
     });
 
 });
