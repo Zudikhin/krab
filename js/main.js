@@ -91,6 +91,8 @@ $(document).ready(function() {
         $(".contacts_block_wrap").addClass("hidden");
         $(`.${target}`).removeClass("hidden");
     });
+
+
     
     $(".products_nav_wrap_item span").click(function() {
         $(".products_nav_wrap_item span").removeClass("active");
@@ -110,6 +112,11 @@ $(document).ready(function() {
     $(".contacts_block_wrap_body_dealers_item_top").click(function() {
         $(this).toggleClass("active");
         $(this).parent().find(".contacts_block_wrap_body_dealers_item_body").slideToggle();
+    });
+
+    $(".company_block_main_countries_item_top").click(function() {
+        $(this).toggleClass("active");
+        $(this).parent().find(".company_block_main_countries_item_body").slideToggle();
     });
 
 });
