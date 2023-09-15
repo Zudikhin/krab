@@ -83,6 +83,14 @@ $(document).ready(function() {
             $("#nav_products").addClass("active");
         }
     });
+
+    $(".contacts_nav_item span").click(function() {
+        var target = $(this).attr("data-target");
+        $(".contacts_nav_item span").removeClass("active");
+        $(this).addClass("active");
+        $(".contacts_block_wrap").addClass("hidden");
+        $(`.${target}`).removeClass("hidden");
+    });
     
     $(".products_nav_wrap_item span").click(function() {
         $(".products_nav_wrap_item span").removeClass("active");

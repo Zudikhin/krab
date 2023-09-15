@@ -2416,6 +2416,18 @@ input:focus {
   letter-spacing: -0.21px;
   text-transform: uppercase;
   cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.contacts_nav_item span:hover {
+  color: #AEAEAE;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.contacts_nav_item span.active {
+  color: #AEAEAE;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .contacts_block_wrap {
   -webkit-box-sizing: border-box;
@@ -2653,6 +2665,9 @@ input:focus {
 .contacts_block_wrap:first-child::after {
   display: none;
 }
+.contacts_block_wrap.hidden {
+  display: none;
+}
 @media (min-width: 768px) {
   .contacts {
     padding: 124px 0px 0px 0px;
@@ -2705,6 +2720,20 @@ input:focus {
   .contacts_block_wrap_sidebar {
     width: 50%;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 100px 60px;
   }
   .contacts_block_wrap_sidebar::after {
     content: "";
@@ -2714,6 +2743,9 @@ input:focus {
     width: 1px;
     height: 100%;
     background-color: #C4C3BF;
+  }
+  .contacts_block_wrap_sidebar h2 {
+    font-size: 70px;
   }
   .contacts_block_wrap_body {
     width: 50%;
@@ -2728,8 +2760,102 @@ input:focus {
   .contacts_block_wrap_body_map iframe {
     height: 720px;
   }
+  .contacts_block_wrap_body_info {
+    margin: 0px;
+    padding: 100px 0px;
+  }
+  .contacts_block_wrap_body_info_item {
+    margin-top: 60px;
+  }
+  .contacts_block_wrap_body_info_item h5 {
+    font-size: 30px;
+  }
+  .contacts_block_wrap_body_info_item p {
+    font-size: 24px;
+  }
+  .contacts_block_wrap_body_info_item a {
+    font-size: 24px;
+  }
+  .contacts_block_wrap_body_dealers {
+    padding: 100px 50px;
+  }
+  .contacts_block_wrap_body_dealers_item {
+    margin-top: 50px;
+  }
+  .contacts_block_wrap_body_dealers_item:first-child {
+    margin-top: 0px;
+  }
+  .contacts_block_wrap_body_dealers_item_top h4 {
+    font-size: 30px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    position: relative;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_name {
+    width: 50%;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_name h4 {
+    font-size: 26px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list {
+    width: 50%;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block {
+    margin-top: 36px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block:first-child {
+    margin-top: 0px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block h5 {
+    font-size: 20px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block a {
+    font-size: 20px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item::after {
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: -29px;
+    width: calc(100% + 100px);
+    height: 1px;
+    background-color: #C4C3BF;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item:first-child::after {
+    display: none;
+  }
   .contacts_block_wrap:first-child::after {
     display: block;
+  }
+}
+@media (min-width: 1920px) {
+  .contacts_block_wrap_sidebar h2 {
+    font-size: 96px;
+  }
+  .contacts_block_wrap_body_dealers_item_top h4 {
+    font-size: 40px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item {
+    margin-top: 80px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_name h4 {
+    font-size: 40px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block h5 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item_list_block a {
+    font-size: 24px;
+  }
+  .contacts_block_wrap_body_dealers_item_body_city_item::after {
+    top: -40px;
   }
 }
 
@@ -3105,10 +3231,8 @@ input:focus {
     display: block;
     width: 176px;
   }
-  .dropdown_menu_children_item_contacts_map iframe {
-    height: 176px;
-    -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
+  .dropdown_menu_children_item_contacts_map img {
+    width: 100%;
   }
   .dropdown_menu_children_item_contacts_text {
     margin-top: 0px;
