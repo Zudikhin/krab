@@ -7,7 +7,6 @@ $(document).ready(function() {
         if (!search.is(e.target) && search.has(e.target).length === 0 && !tooltip.is(e.target) && tooltip.has(e.target).length === 0) {
             $(".header_block_btn").removeClass("active");
             $(".dropdown_menu").removeClass("active");
-            $("body").removeClass("scroll");
         }
     });
 
@@ -76,7 +75,7 @@ $(document).ready(function() {
     $(".header_block_btn").click(function() {
         $(this).toggleClass("active");
         $(".dropdown_menu").toggleClass("active");
-        $("body").toggleClass("scroll");
+        // $("body").toggleClass("scroll");
         if($(window).width() > 1023) {
             $(".dropdown_menu_parent ul li span").removeClass("active");
             $(".dropdown_menu_parent ul li").first().find("span").addClass("active");
@@ -117,6 +116,18 @@ $(document).ready(function() {
     $(".company_block_main_countries_item_top").click(function() {
         $(this).toggleClass("active");
         $(this).parent().find(".company_block_main_countries_item_body").slideToggle();
+    });
+
+    $(".product_video").click(function() {
+        $("body").addClass("scroll");
+        var attr = $(this).attr("data-target");
+        $(`#${attr}`).addClass("active");
+    });
+
+    $(".back_modal_bg").click(function() {
+        $("body").removeClass("scroll");
+        $(".back_modal").removeClass("active");
+        $(".back_modal_video iframe").attr("src", $(".back_modal_video iframe").attr("src"));
     });
 
 });
